@@ -7,7 +7,7 @@ export const data = [
   "rating": 4.7,
   "stock": 10,
   "description": "Stylish UV protection sunglasses perfect for summer outings.",
-  "image": "https://i.postimg.cc/1XyJ9KTB/sunglasses.png",
+  "image": "/images/sun-glass (2).jpg",
   "category": "Accessories"
  },
  {
@@ -18,7 +18,7 @@ export const data = [
   "rating": 4.5,
   "stock": 20,
   "description": "Lightweight beach hat to keep you cool under the sun.",
-  "image": "https://i.postimg.cc/Vk6s0G9t/hat.png",
+  "image": "/images/cap.jpg",
   "category": "Accessories"
  },
  {
@@ -29,7 +29,7 @@ export const data = [
   "rating": 4.3,
   "stock": 15,
   "description": "Comfortable flip flops ideal for beach and casual wear.",
-  "image": "https://i.postimg.cc/Y9n8fQyB/flipflops.png",
+  "image": "/images/beach-sandle.jpg",
   "category": "Footwear"
  },
  {
@@ -40,7 +40,7 @@ export const data = [
   "rating": 4.6,
   "stock": 25,
   "description": "Breathable cotton t-shirt perfect for hot weather.",
-  "image": "https://i.postimg.cc/8z1kYJvL/tshirt.png",
+  "image": "/images/shirt.jpg",
   "category": "Clothing"
  },
  {
@@ -51,7 +51,7 @@ export const data = [
   "rating": 4.4,
   "stock": 30,
   "description": "Reusable water bottle to stay hydrated during summer.",
-  "image": "https://i.postimg.cc/zvZ9k2yY/bottle.png",
+  "image": "/images/water-bottle.jpg",
   "category": "Essentials"
  },
  {
@@ -62,7 +62,7 @@ export const data = [
   "rating": 4.8,
   "stock": 12,
   "description": "High protection sunscreen to protect your skin from UV rays.",
-  "image": "https://i.postimg.cc/fR2hFZkK/sunscreen.png",
+  "image": "/images/.jpg",
   "category": "Skincare"
  }
 ]
