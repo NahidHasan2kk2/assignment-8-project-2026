@@ -1,9 +1,49 @@
-import React from 'react';
+'use client';
+
+import { authClient } from "@/lib/auth.client";
+import Link from "next/link";
 
 const LoginPage = () => {
+ const handleLoginForm = async (e) => {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  const newFormData = Object.fromEntries(formData.entries());
+  const { email, password } = newFormData;
+  const { data, error } = await authClient.signIn.email({
+   email: email, // required
+   password: password, // required
+   rememberMe: true,
+   callbackURL: "/",
+  });
+  if (error) {
+   alert(`please use valid user. ${error.message}`)
+  }
+  if (data) {
+   alert('login successfully')
+  }
+ }
+
+
+
  return (
-  <div>
-   login page
+  <div className='flex justify-center items-center lg:mt-15'>
+   <div className="card bg-base-200 w-full max-w-sm shrink-0 shadow-2xl border-1">
+    <div className="card-body">
+     <form onSubmit={handleLoginForm}>
+      <fieldset className="fieldset">
+       <label className="label text-black ">Email</label>
+       <input type="email" className="input" name="email" placeholder="Email" />
+       <label className="label text-black">Password</label>
+       <input type="password" className="input" name="password" placeholder="Password" />
+       <div><a className="link link-hover">Forgot password?</a></div>
+       <button className="btn btn-neutral mt-4">Login</button>
+      </fieldset>
+      <div>
+       <h1>If you are New! please <Link className="text-primary font-bold underline" href={'/register'}>Register</Link> </h1>
+      </div>
+     </form>
+    </div>
+   </div>
   </div>
  );
 };

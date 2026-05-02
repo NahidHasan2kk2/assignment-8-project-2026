@@ -1,7 +1,7 @@
 export const data = [
  {
   "id": 1,
-  "name": "UV Protection Sunglasses",
+  "name": "UV Sunglasses",
   "brand": "SunShade",
   "price": 15,
   "rating": 4.7,
@@ -18,7 +18,7 @@ export const data = [
   "rating": 4.5,
   "stock": 20,
   "description": "Lightweight beach hat to keep you cool under the sun.",
-  "image": "/images/cap.jpg",
+  "image": "/images/cap3.jpg",
   "category": "Accessories"
  },
  {
@@ -29,7 +29,7 @@ export const data = [
   "rating": 4.3,
   "stock": 15,
   "description": "Comfortable flip flops ideal for beach and casual wear.",
-  "image": "/images/beach-sandle.jpg",
+  "image": "/images/sandle.jpg",
   "category": "Footwear"
  },
  {
@@ -62,7 +62,7 @@ export const data = [
   "rating": 4.8,
   "stock": 12,
   "description": "High protection sunscreen to protect your skin from UV rays.",
-  "image": "/images/.jpg",
+  "image": "/images/cream.jpg",
   "category": "Skincare"
  }
 ]

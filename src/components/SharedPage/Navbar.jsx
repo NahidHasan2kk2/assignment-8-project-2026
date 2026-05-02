@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import Navlink from './Navlink';
 
+
 const Navbar = () => {
 
  const links = <>
@@ -10,7 +11,7 @@ const Navbar = () => {
   <li><Navlink href={'/profile'}>My Profile</Navlink></li>
  </>
  return (
-  <div className="navbar bg-base-100 shadow-sm container mx-auto">
+  <div className="navbar bg-base-100 sticky top-0 z-50 shadow-sm container mx-auto">
    <div className="navbar-start">
     <div className="dropdown">
      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -22,7 +23,7 @@ const Navbar = () => {
       {links}
      </ul>
     </div>
-    <a className="btn btn-ghost font-bold  text-2xl">Summer Goods</a>
+    <a className="btn btn-ghost font-bold  text-3xl">Summer<span className='text-primary'>Goods</span></a>
    </div>
    <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -32,6 +33,7 @@ const Navbar = () => {
    </div >
    <div className="navbar-end">
     <Link href={'/login'} className="btn btn-primary">Login</Link>
+    <Link href={'/register'} className="btn btn-primary ml-5">Register</Link>
    </div>
   </div >
  );

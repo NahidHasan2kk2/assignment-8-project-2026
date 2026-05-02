@@ -1,5 +1,6 @@
+import Navbar from '@/components/SharedPage/Navbar';
 import React from 'react';
-import Navbar from '../components/SharedPage/Navbar';
+
 
 const AuthLayout = ({ children }) => {
  return (

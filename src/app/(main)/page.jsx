@@ -1,9 +1,10 @@
 import Image from "next/image";
-import LeftSideBar from "../components/HomePage/LeftSideBar/LeftSideBar";
-import CardsPage from "../components/HomePage/CardsPage/CardsPage";
-import RightSideBar from "../components/HomePage/RightSideBar/RightSideBar";
-import { data } from "../lib/data";
+
+import { data } from "../../lib/data";
 import { use } from "react";
+import LeftSideBar from "@/components/HomePage/LeftSideBar/LeftSideBar";
+import CardsPage from "@/components/HomePage/CardsPage/CardsPage";
+import RightSideBar from "@/components/HomePage/RightSideBar/RightSideBar";
 
 export default function Home() {
   const userData = data;
@@ -15,7 +16,7 @@ export default function Home() {
       <div className=" lg:col-span-8">
         <CardsPage userData={userData}></CardsPage>
       </div>
-      <div className="bg-blue-200  lg:col-span-2">
+      <div className=" lg:col-span-2">
         <RightSideBar></RightSideBar>
       </div>
     </div>

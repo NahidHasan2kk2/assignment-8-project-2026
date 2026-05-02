@@ -1,7 +1,8 @@
+import Footer from '@/components/Footer/Footer';
+import Header from '@/components/SharedPage/Header';
+import Navbar from '@/components/SharedPage/Navbar';
 import React from 'react';
-import Navbar from '../components/SharedPage/Navbar';
-import Header from '../components/SharedPage/Header';
-import Footer from '../components/Footer/Footer';
+
 
 const MainLayout = ({ children }) => {
  return (
