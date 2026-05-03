@@ -1,9 +1,16 @@
+'use client';
 import Link from 'next/link';
 import React from 'react';
 import Navlink from './Navlink';
+import { authClient } from '@/lib/auth.client';
 
 
 const Navbar = () => {
+
+
+ const { data: session } = authClient.useSession()
+ console.log(session?.user?.name)
+
 
  const links = <>
   <li><Navlink href={'/'}>Home</Navlink></li>
@@ -32,8 +39,24 @@ const Navbar = () => {
     </ul >
    </div >
    <div className="navbar-end">
-    <Link href={'/login'} className="btn btn-primary">Login</Link>
-    <Link href={'/register'} className="btn btn-primary ml-5">Register</Link>
+    {
+     session ? <div className='flex justify-center items-center gap-3'>
+      <h1 className='font-bold text-xl'>Hello ,{session?.user?.name}</h1>
+      <div className='w-[40] bg-blue-300 rounded-full'>
+       <img className='rounded-full' src={session?.user?.image} alt="Login user" />
+      </div>
+      <button onClick={async () => await authClient.signOut()} className='btn btn-primary'>Log Out</button>
+     </div>
+      :
+      <div>
+       <Link href={'/login'} className="btn btn-primary">Login</Link>
+       <Link href={'/register'} className="btn btn-primary ml-5">Register</Link>
+      </div>
+
+    }
+
+
+
    </div>
   </div >
  );

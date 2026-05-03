@@ -1,7 +1,9 @@
 'use client';
 
 import { authClient } from "@/lib/auth.client";
+
 import Link from "next/link";
+import { FaGoogle } from "react-icons/fa";
 
 const LoginPage = () => {
  const handleLoginForm = async (e) => {
@@ -22,6 +24,13 @@ const LoginPage = () => {
    alert('login successfully')
   }
  }
+ const loginWithGoogle = async () => {
+  const data = await authClient.signIn.social({
+   provider: "google",
+   callbackURL: "/"
+  })
+  // console.log(data);
+ }
 
 
 
@@ -37,6 +46,10 @@ const LoginPage = () => {
        <input type="password" className="input" name="password" placeholder="Password" />
        <div><a className="link link-hover">Forgot password?</a></div>
        <button className="btn btn-neutral mt-4">Login</button>
+       <button type="button" onClick={loginWithGoogle} className='btn border-gray-500 text-blue-700 '>
+        <FaGoogle className='mr-2' />
+        Login with Google
+       </button>
       </fieldset>
       <div>
        <h1>If you are New! please <Link className="text-primary font-bold underline" href={'/register'}>Register</Link> </h1>

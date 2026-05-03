@@ -1,10 +1,12 @@
 'use client';
 
 import { authClient } from "@/lib/auth.client";
-import { redirect } from "next/dist/server/api-utils";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
-import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
+import { FaGoogle } from "react-icons/fa";
+
+
 
 const RegisterPage = () => {
  const router = useRouter();
@@ -19,8 +21,8 @@ const RegisterPage = () => {
    name: name, // required
    email: email, // required
    password: password, // required
-   image: photo,
-   callbackURL: "/",
+   image: photo
+
 
   });
   console.log(error);
@@ -28,9 +30,16 @@ const RegisterPage = () => {
    alert(`${error.message}`)
   } if (data) {
    alert('successfully added new user')
-   router.push("/");
+   await authClient.signOut();
+   router.push("/login");
   }
 
+ }
+ const loginWithGoogle = async () => {
+  const data = await authClient.signIn.social({
+   provider: 'google',
+   callbackURL: '/'
+  })
  }
 
 
@@ -50,7 +59,14 @@ const RegisterPage = () => {
        <input type="password" className="input" name="password" required placeholder="Enter Password" />
        <div><a className="link link-hover">Forgot password?</a></div>
        <button className="btn btn-neutral mt-4">Sign Up</button>
+       <button type="button" onClick={loginWithGoogle} className='btn border-gray-500 text-blue-700 '>
+        <FaGoogle className='mr-2' />
+        Login with Google
+       </button>
       </fieldset>
+      <div>
+       <h1>If you are already user ! please <Link className="text-primary font-bold underline" href={'/login'}>Login</Link> </h1>
+      </div>
      </form>
     </div>
    </div>
