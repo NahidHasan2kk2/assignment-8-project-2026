@@ -30,7 +30,7 @@ const LoginPage = () => {
    callbackURL: "/"
   })
   if (data) {
-   alert('Google login successfully')
+   alert('Google login successfully !')
   }
 
  }

@@ -35,6 +35,7 @@ const RegisterPage = () => {
    router.push("/login");
   }
 
+
  }
  const loginWithGoogle = async () => {
   const data = await authClient.signIn.social({
@@ -44,6 +45,8 @@ const RegisterPage = () => {
   if (data) {
    alert('Google login successfully')
   }
+
+
 
  }
 
