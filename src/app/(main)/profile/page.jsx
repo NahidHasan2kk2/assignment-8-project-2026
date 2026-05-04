@@ -1,16 +1,17 @@
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
+import Link from "next/link";
 
-export default async function ProfilePage() {
+const ProfilePage = async () => {
  const session = await auth.api.getSession({
   headers: await headers(),
  });
 
- // If no user
+
  if (!session?.user) {
   return (
-   <div className="flex justify-center items-center min-h-screen">
-    <h1 className="text-xl font-bold">User not logged in</h1>
+   <div className="flex justify-center items-center bg-base-300 h-[40vh]">
+    <h1 className="text-3xl font-bold opacity-65">User Not Found!</h1>
    </div>
   );
  }
@@ -18,8 +19,8 @@ export default async function ProfilePage() {
  const user = session.user;
 
  return (
-  <div className="flex justify-center items-center min-h-screen bg-gray-100">
-   <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-md text-center">
+  <div className="flex justify-center items-center  bg-gray-100">
+   <div className="bg-white shadow-lg rounded-2xl my-5 p-6 w-80 border-1 text-center">
 
     {/* Avatar */}
     <img
@@ -27,28 +28,15 @@ export default async function ProfilePage() {
      alt="user"
      className="w-24 h-24 rounded-full mx-auto mb-4"
     />
-
-    {/* Name */}
-    <h2 className="text-2xl font-bold">{user.name}</h2>
-
-    {/* Email */}
-    <p className="text-gray-600 mt-1">{user.email}</p>
-
-    {/* Extra info */}
-    <div className="mt-4 text-left space-y-2">
-     <p>
-      <span className="font-semibold">User ID:</span> {user.id}
-     </p>
-     <p>
-      <span className="font-semibold">Role:</span>{" "}
-      {user.role || "user"}
-     </p>
-     <p>
-      <span className="font-semibold">Verified:</span>{" "}
-      {user.emailVerified ? "Yes" : "No"}
-     </p>
+    <div className="text-center">
+     <h2 className="text-2xl font-bold">{user.name}</h2>
+     <p className="text-gray-600 mt-1">{user.email}</p>
+    </div>
+    <div className="my-3">
+     <Link href={'/profile/updateUser'}> <button className="btn bg-blue-400  hover:text-white hover:bg-blue-600">Update User</button></Link>
     </div>
    </div>
   </div>
  );
 }
+export default ProfilePage;
