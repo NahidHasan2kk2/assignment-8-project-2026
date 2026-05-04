@@ -32,7 +32,7 @@ const TopBrand = () => {
 
  return (
   <section className="container mx-auto my-12 px-4">
-   <h2 className="text-3xl font-bold text-center mb-8">
+   <h2 className="text-3xl font-bold text-center  animate__animated animate__fadeIn mb-8">
     🏷️ Top Brands
    </h2>
 

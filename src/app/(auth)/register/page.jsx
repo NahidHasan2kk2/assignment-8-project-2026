@@ -4,6 +4,7 @@ import { authClient } from "@/lib/auth.client";
 import Link from "next/link";
 
 import { useRouter } from "next/navigation";
+
 import { FaGoogle } from "react-icons/fa";
 
 
@@ -40,8 +41,11 @@ const RegisterPage = () => {
    provider: 'google',
    callbackURL: '/'
   })
- }
+  if (data) {
+   alert('Google login successfully')
+  }
 
+ }
 
  return (
   <div className='flex justify-center items-center lg:mt-15'>

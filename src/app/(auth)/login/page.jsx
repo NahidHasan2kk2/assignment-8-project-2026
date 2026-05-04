@@ -29,7 +29,10 @@ const LoginPage = () => {
    provider: "google",
    callbackURL: "/"
   })
-  // console.log(data);
+  if (data) {
+   alert('Google login successfully')
+  }
+
  }
 
 
