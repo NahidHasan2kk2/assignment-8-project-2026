@@ -10,8 +10,8 @@ const ProfilePage = async () => {
 
  if (!session?.user) {
   return (
-   <div className="flex justify-center items-center bg-base-300 h-[40vh]">
-    <h1 className="text-3xl font-bold opacity-65">User Not Found!</h1>
+   <div className="flex justify-center items-center bg-base-300 h-20 my-3 lg:h-[40vh]">
+    <h1 className="lg:text-3xl text-xl font-bold opacity-65">User Not Found!</h1>
    </div>
   );
  }
