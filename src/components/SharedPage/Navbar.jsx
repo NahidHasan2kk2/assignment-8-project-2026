@@ -30,7 +30,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost font-bold text-xl  lg:text-3xl">Summer<span className='text-primary'>Goods</span></a>
+        <a className="btn btn-ghost font-bold text-xl  animate__animated animate__fadeIn lg:text-3xl">Nahids<span className='text-primary'>Shop</span></a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -48,9 +48,13 @@ const Navbar = () => {
             <button onClick={async () => await authClient.signOut()} className='btn btn-primary btn-sm sm:btn-sm'>Log Out</button>
           </div>
             :
-            <div>
-              <Link href={'/login'} className="btn btn-primary ">Login</Link>
-              <Link href={'/register'} className="lg:ml-5 ml-1 btn btn-primary">Register</Link>
+            <div className='flex justify-center items-center'>
+              <div>
+                <Link href={'/login'} className="btn btn-primary  ">Login</Link>
+              </div>
+              <div className='hidden lg:block'>
+                <Link href={'/register'} className="lg:ml-5 ml-1 btn btn-primary">Register</Link>
+              </div>
             </div>
 
         }
